@@ -34,20 +34,20 @@ function GalleryItem( props ){
     let GallaryDescription = () =>{
         console.log( 'in gallaryDescription');
         return( 
-            <p> { props.item.description } </p> 
+            <p onClick={ toggleOrigin }> { props.item.description } </p> 
         )
     }
 
     let GallaryImage = () =>{
         console.log( 'in gallaryImage');
         return( 
-            <img src={props.item.path} height={100} width={100} />
+            <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} />
             )
     }
 
     return(
         <div>
-            { displayDescription() }
+            <>{ displayDescription() }</>
             {/* <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} /> */}
 
             <div>
