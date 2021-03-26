@@ -7,7 +7,7 @@ const galleryItems = [
   },
   {
     id: 2,
-    path: '/images/venus_mars_jupiter.png',
+    path: '/images/venus_mars_jupiter.jpg',
     description: `The evening view from my home in Colorado. Venus is the bright star in the middle of the photo. Mars is the lower bright star to the left (10 o'clock position). Jupiter is the bright star just above Mars.`,
     likes: 4,
   },
