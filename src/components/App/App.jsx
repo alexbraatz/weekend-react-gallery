@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
 function App() {
 
-  let [ gallery, setGallery ] = useState([]);
+  const [ newGallery, setGallery ] = useState( [] );
 
   useEffect( ()=>{
-    console.log( 'in useEffect' );
-    getGallery();
+    if( newGallery.length === 0 ){
+      console.log( 'in useEffect' );
+      getGallery();
+    }
   });
 
-  const getGallery = () => {
+  let getGallery = () => {
     axios.get( '/gallery' ).then( ( response )=>{
-      console.log( 'getGallery response:', response.data );
+      console.log( 'getGallery GET response:', response.data );
       setGallery( response.data );
     }).catch( ( error )=>{
       console.log( error );
