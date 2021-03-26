@@ -47,8 +47,7 @@ function GalleryItem( props ){
 
     return(
         <div>
-            <>{ displayDescription() }</>
-            {/* <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} /> */}
+            { displayDescription() }
 
             <div>
                 <button>like it!</button>

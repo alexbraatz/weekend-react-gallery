@@ -1,0 +1,33 @@
+#info {
+    text-align: center;
+    margin-top: -20px;
+    font-size: small;
+}
+
+#gallaryTitle {
+    text-align: center;
+}
+
+/* .column {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+} */
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 75%;
+    padding: 75px;
+}
+
+.column img {
+    padding: 2.2em;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

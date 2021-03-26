@@ -1,13 +1,19 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
+import './GalleryList.css';
 
 function GalleryList( props ){
     console.log( 'in GalleryList:', props );
     return (
         <>
-            <h2>Gallery</h2>
-            <ul>
-                { props.gallary.map( ( item, index )=><GalleryItem item={ item } key={ index }/> ) }
-            </ul>
+
+            <h2 id="gallaryTitle">Gallery</h2>
+            <p id="info">(Click on an image to view it's description)</p>
+        
+            <div class="row">
+                <div class="column">
+                    { props.gallary.map( ( item, index )=><GalleryItem item={ item } key={ index }/> ) }
+                </div>
+            </div>
         </>
     )
 };
