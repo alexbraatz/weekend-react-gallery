@@ -25,22 +25,36 @@ function GalleryItem( props ){
         
         if( showOrigin ){
             console.log( 'in displayDescription', showOrigin )
-            return( <gallaryDescription />);
+            return( <GallaryDescription />);
+        } else {
+            return( <GallaryImage />);
         }
     }
 
-    let gallaryDescription = () =>{
-        return( <p> { props.item.description } </p> )
+    let GallaryDescription = () =>{
+        console.log( 'in gallaryDescription');
+        return( 
+            <p> { props.item.description } </p> 
+        )
+    }
+
+    let GallaryImage = () =>{
+        console.log( 'in gallaryImage');
+        return( 
+            <img src={props.item.path} height={100} width={100} />
+            )
     }
 
     return(
-        <div id="main">
-            <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} />
+        <div>
+            { displayDescription() }
+            {/* <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} /> */}
 
             <div>
-            <button>like it!</button>
-            <p> { displayLikes() }</p>
+                <button>like it!</button>
+                <p> { displayLikes() }</p>
             </div>
+
         </div>
     )
 };
