@@ -2,13 +2,17 @@ import { useState } from 'react';
 
 function GalleryItem( props ){
     console.log( 'galleryItem', props );
+
+
     return(
-        <>
-        <li>
+        <div>
             <img src={props.item.path} height={100} width={100} />
-        </li>
-        <li><button>like it!</button></li>
-        </>
+
+            <div>
+            <button>like it!</button>
+            <p> {props.item.likes} people love this!</p>
+            </div>
+        </div>
     )
 };
 
