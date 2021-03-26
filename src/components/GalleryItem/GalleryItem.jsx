@@ -5,11 +5,9 @@ function GalleryItem( props ){
     return(
         <>
         <li>
-            
             <img src={props.item.path} height={100} width={100} />
-            <li><button>like it!</button></li>
-        
         </li>
+        <li><button>like it!</button></li>
         </>
     )
 };
