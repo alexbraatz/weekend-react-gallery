@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function GalleryItem( props ){
-    console.log( 'galleryItem', props );
+    const [ showOrigin, setShowOrigin ] = useState( false );
 
     let displayLikes = () => {
         if( props.item.likes > 1 ){
@@ -14,9 +14,28 @@ function GalleryItem( props ){
         }
     }
 
+    let toggleOrigin = () => {
+        console.log( 'in toggleOrigin', showOrigin )
+        setShowOrigin( !showOrigin )
+    }
+
+    console.log( 'out of toggleOrign', showOrigin )
+
+    let displayDescription = () =>{
+        
+        if( showOrigin ){
+            console.log( 'in displayDescription', showOrigin )
+            return( <gallaryDescription />);
+        }
+    }
+
+    let gallaryDescription = () =>{
+        return( <p> { props.item.description } </p> )
+    }
+
     return(
-        <div>
-            <img src={props.item.path} height={100} width={100} />
+        <div id="main">
+            <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} />
 
             <div>
             <button>like it!</button>
