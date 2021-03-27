@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import App from '../App/App';
 
 function GalleryItem( props ){
     const [ showOrigin, setShowOrigin ] = useState( false );
@@ -18,7 +19,6 @@ function GalleryItem( props ){
     let toggleOrigin = () => {
         setShowOrigin( !showOrigin )
     }
-
 
     let displayDescription = () =>{
         
@@ -47,14 +47,14 @@ function GalleryItem( props ){
 
         axios.put( '/gallery/like/' + myId ).then( ( response )=>{
             console.log( 'this is response from postLove', response );
-            displayLikes();
-            displayDescription();
+            location.reload(); // not ideal, but a working solution
         }).catch( ( error )=>{
             console.log( error );
             alert( 'not today amigo' );
         })
 
     }
+
     return(
         <div>
             { displayDescription() }

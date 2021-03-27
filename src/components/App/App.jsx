@@ -8,12 +8,7 @@ function App() {
 
   const [ newGallery, setGallery ] = useState( [] );
 
-  useEffect( ()=>{
-    if( newGallery.length === 0 ){
-      console.log( 'in useEffect' );
-      getGallery();
-    }
-  });
+  useEffect( ()=> { getGallery() }, []);
 
   let getGallery = () => {
     axios.get( '/gallery' ).then( ( response )=>{
