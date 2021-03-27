@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 function GalleryItem( props ){
@@ -42,8 +43,16 @@ function GalleryItem( props ){
     }
 
     let postLove = () => {
-        const myId = props.item.id 
-        console.log( myId );
+        const myId = props.item.id
+
+        axios.put( '/gallery/like/' + myId ).then( ( response )=>{
+            console.log( 'this is response from postLove', response );
+            displayLikes();
+            displayDescription();
+        }).catch( ( error )=>{
+            console.log( error );
+            alert( 'not today amigo' );
+        })
 
     }
     return(
@@ -51,7 +60,7 @@ function GalleryItem( props ){
             { displayDescription() }
 
             <div>
-                <button onClick={ postLove } id="loveBtn">love it!</button>
+                <button onClick={ postLove }>love it!</button>
                 <p> { displayLikes() }</p>
             </div>
 
