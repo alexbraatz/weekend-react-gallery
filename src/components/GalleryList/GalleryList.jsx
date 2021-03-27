@@ -9,8 +9,8 @@ function GalleryList( props ){
             <h2 id="gallaryTitle">Gallery</h2>
             <p id="info">(Click on an image to view it's description)</p>
         
-            <div class="row">
-                <div class="column">
+            <div className="row">
+                <div className="column">
                     { props.gallary.map( ( item, index )=><GalleryItem item={ item } key={ index }/> ) }
                 </div>
             </div>

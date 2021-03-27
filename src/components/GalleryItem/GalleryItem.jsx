@@ -15,11 +15,9 @@ function GalleryItem( props ){
     }
 
     let toggleOrigin = () => {
-        console.log( 'in toggleOrigin', showOrigin )
         setShowOrigin( !showOrigin )
     }
 
-    console.log( 'out of toggleOrign', showOrigin )
 
     let displayDescription = () =>{
         
@@ -32,25 +30,28 @@ function GalleryItem( props ){
     }
 
     let GallaryDescription = () =>{
-        console.log( 'in gallaryDescription');
         return( 
             <p onClick={ toggleOrigin }> { props.item.description } </p> 
         )
     }
 
     let GallaryImage = () =>{
-        console.log( 'in gallaryImage');
         return( 
             <img onClick={ toggleOrigin } src={props.item.path} height={100} width={100} />
             )
     }
 
+    let postLove = () => {
+        const myId = props.item.id 
+        console.log( myId );
+
+    }
     return(
         <div>
             { displayDescription() }
 
             <div>
-                <button>like it!</button>
+                <button onClick={ postLove } id="loveBtn">love it!</button>
                 <p> { displayLikes() }</p>
             </div>
 
